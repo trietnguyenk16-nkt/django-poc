@@ -1,0 +1,85 @@
+{% extends "template.html" %}
+{% block title %}
+Portal Link Management
+{% endblock %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-8 search-bar">
+        <div class="input-group">
+            <span class="input-group-text">Search</span>
+            <input type="text" aria-label="Search" class="form-control txt-search">
+            <button title="Add link" type="button" class="btn btn-primary"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-primary"><i class="fas fa-add"></i></button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <table class="table table-bordered table-responsive table-striped text-center">
+        <thead class="bg-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Env</th>
+            <th scope="col">Link</th>
+            <th scope="col">Type</th>
+            <th scope="col">Description</th>
+            <th scope="col">Created By</th>
+            <th scope="col">Created Date</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr></tr>
+        <tr>
+            <th scope="row">1</th>
+            <td>Django</td>
+            <td>Django</td>
+            <td>
+                <a href="https://www.djangoproject.com/">https://www.djangoproject.com/</a>
+            </td>
+            <td>Web Framework</td>
+            <td>Example</td>
+            <td>Alien</td>
+            <td>28/06/2023 09:00AM</td>
+            <td> {% include 'actions.html' %}</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+             <td>Nginx</td>
+            <td>Nginx</td>
+            <td>
+                <a href="https://www.nginx.com/">https://www.nginx.com/</a>
+            </td>
+            <td>Deployment Framework</td>
+            <td>Example</td>
+            <td>Alien</td>
+            <td>28/06/2023 09:00AM</td>
+            <td> {% include 'actions.html' %}</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+             <td>Shellngn</td>
+            <td>Shellngn</td>
+            <td>
+                <a href="https://app.shellngn.com/">https://app.shellngn.com/</a>
+            </td>
+            <td>SSH Client Tool on Web</td>
+            <td>Example</td>
+            <td>Alien</td>
+            <td>28/06/2023 09:00AM</td>
+            <td> {% include 'actions.html' %}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+{% load static %}
+<script src="{% static 'js/scripts.js' %}"></script>
+{% endblock %}
+
