@@ -1,0 +1,216 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
+    <meta name="apple-mobile-web-app-title" content="DjangoExample">
+    <title>Our team - Thank you Síp!</title>
+
+    <style>
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+.more-pens {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 10;
+  font-family: "Montserrat";
+  font-size: 12px;
+}
+
+a.white-mode, a.white-mode:link, a.white-mode:visited, a.white-mode:active {
+  font-family: "Montserrat";
+  font-size: 12px;
+  text-decoration: none;
+  background: #212121;
+  padding: 4px 8px;
+  color: #f7f7f7;
+}
+a.white-mode:hover, a.white-mode:link:hover, a.white-mode:visited:hover, a.white-mode:active:hover {
+  background: #edf3f8;
+  color: #212121;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #121212;
+}
+
+.codepen {
+  text-align: center;
+  width: 427px;
+  height: 100px;
+}
+.codepen svg {
+  width: 427px;
+  height: 100px;
+  fill: #FFFFFF;
+}
+
+.title {
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0.8);
+  text-align: center;
+}
+.title h3 {
+  font-family: "Montserrat";
+  font-weight: 200;
+  font-size: 50px;
+  padding: 0;
+  margin: 0;
+  line-height: 2;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+}
+.title h2 {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  padding: 0;
+  margin: 4px 0 0 0;
+  line-height: 1;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+}
+
+svg {
+  transition: fill 0.3s ease-out;
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transform: translateZ(0px);
+  fill: #444444;
+}
+svg.highlight {
+  fill: #fcd000;
+}
+
+
+    </style>
+
+    <script>
+  window.console = window.console || function(t) {};
+
+
+    </script>
+
+
+</head>
+
+<body translate="no" data-new-gr-c-s-check-loaded="14.1113.0" data-gr-ext-installed="">
+<div class="title">
+    <h3>THANK YOU - SÍP </h3>
+    <hr>
+    <br>
+    <div class="codepen">
+        <svg fill="#000000" width="256px" height="256px" viewBox="0 0 24 24" role="img"
+             xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12C23.996 5.374 18.626.004 12 0zm0 22.88C5.991 22.88 1.12 18.009 1.12 12S5.991 1.12 12 1.12 22.88 5.991 22.88 12c-.006 6.006-4.874 10.874-10.88 10.88zm4.954-18.374h-.821v4.108h-8.24V4.506h-.847a8.978 8.978 0 0 0 0 14.988h.846v-4.108h8.24v4.108h.822a8.978 8.978 0 0 0 0-14.988zM6.747 17.876a7.86 7.86 0 0 1 0-11.752v11.752zm9.386-3.635h-8.24V9.734h8.24v4.507zm1.12 3.61V6.124a7.882 7.882 0 0 1 0 11.727z"></path>
+            </g>
+        </svg>
+    </div>
+
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script id="rendered-js">
+const heart = '<svg viewBox="0 0 100.1 86.8"> <path d="M85.3,2.7c-13-5.8-29.5,0-35.3,12.2C44.3,1.9,27-3.8,14.8,2.7C1.2,9.1-5.3,25,5.5,44.4C13.4,58,27,68.1,50,86.8 C73.8,68.1,87.4,58,94.6,44.4C105.4,25.7,98.9,9.1,85.3,2.7z"/> </svg>';
+const logo = '<svg fill="#000000" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12C23.996 5.374 18.626.004 12 0zm0 22.88C5.991 22.88 1.12 18.009 1.12 12S5.991 1.12 12 1.12 22.88 5.991 22.88 12c-.006 6.006-4.874 10.874-10.88 10.88zm4.954-18.374h-.821v4.108h-8.24V4.506h-.847a8.978 8.978 0 0 0 0 14.988h.846v-4.108h8.24v4.108h.822a8.978 8.978 0 0 0 0-14.988zM6.747 17.876a7.86 7.86 0 0 1 0-11.752v11.752zm9.386-3.635h-8.24V9.734h8.24v4.507zm1.12 3.61V6.124a7.882 7.882 0 0 1 0 11.727z"></path></g></svg>';
+const star = '<svg viewBox="0 0 100.1 99.2"> <path d="M50,2.7l12.8,34.4l36.6,1.6L70.8,61.2l9.9,35.3L50,76.3L19.5,96.5l9.9-35.3L0.7,38.5L37.3,37L50,2.7z"/> </svg>';
+const cloud = '<svg viewBox="0 0 100.1 65.1"> <path class="st0" d="M36.6,58.6c0,1.5,1.2,1.7,1.9,1.2c1.8-1.6,15.9-14.6,15.9-14.6h19.3c3.8,0,4.4-0.8,4.4-4.5V9.6 c0-3.7-0.8-4.5-4.4-4.5H26.3c-3.6,0-4.4,0.9-4.4,4.5v31.1c0,3.7,0.7,4.4,4.4,4.4h10.4L36.6,58.6L36.6,58.6z"/></svg>';
+
+
+const data = [heart, logo, star, cloud];
+
+const max = 50;
+
+let particles = [];
+
+
+class Ball {
+  constructor(shape) {
+    this.shape = $(shape);
+    this.speed = 2 + Math.random() * 12;
+    this.vx = Math.random() * this.speed - Math.random() * this.speed;
+    this.vy = Math.random() * this.speed - Math.random() * this.speed;
+    this.radius = 10 + Math.round(Math.random() * 50);
+    this.w = $(window).width();
+    this.h = $(window).height();
+    this.x = (this.w - this.radius) / 2;
+    this.y = (this.h - this.radius) / 2;
+
+    $(window).on("resize", this.resize.bind(this));
+    this.render();
+  }
+
+  render() {
+    $(this.shape).css({
+      width: this.radius,
+      height: this.radius });
+
+    $("body").append(this.shape);
+  }
+
+  resize() {
+    this.w = $(window).width();
+    this.h = $(window).height();
+  }
+
+  move() {
+    this.x = this.x + this.vx;
+    this.y = this.y + this.vy;
+
+
+    this.shape.css({
+      left: this.x,
+      top: this.y,
+      transform: "rotate(" + this.y + "deg)" });
+
+
+    if (this.x < 0 || this.x > this.w - this.radius) {
+      this.vx = -this.vx;
+      $(this.shape).toggleClass("highlight");
+    }
+    if (this.y < 0 || this.y > this.h - this.radius) {
+      this.vy = -this.vy;
+      $(this.shape).toggleClass("highlight");
+    }
+    return this;
+  }}
+
+
+
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+
+for (let i = 0; i < max; i++) {
+  particles.push(
+  new Ball(data[randomInt(0, data.length - 1)]));
+
+}
+
+function update() {
+  particles = particles.filter(function (p) {
+    return p.move();
+  });
+  requestAnimationFrame(update.bind(this));
+}
+update();
+//# sourceURL=pen.js
+
+
+</script>
