@@ -2,6 +2,7 @@ pipeline {
     agent any
 	parameters {
 		booleanParam(defaultValue: false, description: "Enable Service?", name: "myBoolean")
+		string(defaultValue: "Testing", description: "Which Environment?", name: "deployEnv")
 	}
     stages {
         stage("Clean up")  {
@@ -12,7 +13,8 @@ pipeline {
         stage("Clone Repo") {
             steps {
 		    echo "clone step test"
-		    echo "booleanParam is set to: ${params.myBoolean}"  
+		    echo "booleanParam is set to: ${params.myBoolean}"
+		    echo "string is set to: ${params.deployEnv}"  
                 //sh git clone "https://github.com/trietnguyenk16-nkt/django-poc.git"
                 
             }
