@@ -19,6 +19,7 @@ pipeline {
         }
         stage("Clone Repo") {
             steps {
+		    echo "build number is set to: ${env.BUILD_NUMBER}"
 		    echo "var1 is set to: ${myFirstVariable}"
 		    echo "var2 is set to: ${mySecondVariable}"
 		    echo "var3 is set to: ${myThirdVariable}"
