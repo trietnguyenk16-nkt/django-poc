@@ -3,6 +3,8 @@ pipeline {
 	parameters {
 		booleanParam(defaultValue: false, description: "Enable Service?", name: "myBoolean")
 		string(defaultValue: "Testing", description: "Which Environment?", name: "deployEnv")
+		choice(choices: ["PRODD", "DEV", "QA"], description: "Environment choice", name: "envChoice")
+
 	}
     stages {
         stage("Clean up")  {
@@ -15,6 +17,7 @@ pipeline {
 		    echo "clone step test"
 		    echo "booleanParam is set to: ${params.myBoolean}"
 		    echo "string is set to: ${params.deployEnv}"  
+		    echo "choice is set to: ${params.envChoice}"
                 //sh git clone "https://github.com/trietnguyenk16-nkt/django-poc.git"
                 
             }
