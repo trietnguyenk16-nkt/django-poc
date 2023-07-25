@@ -6,7 +6,7 @@ pipeline {
 		choice(choices: ["PRODD", "DEV", "QA"], description: "Environment choice", name: "envChoice")
 
 	}
-	trietVariables {
+	environment {
 		def myFirstVariable = "Hello World"
 		def mySecondVariable = 10
 		def myThirdVariable = true
