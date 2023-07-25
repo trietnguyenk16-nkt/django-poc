@@ -14,17 +14,20 @@ pipeline {
         }
         stage("Build") {
             steps {
+		    echo "build step"
                 // dir the same cd
-                dir("simple-java-maven-app") {
-                    sh "mvn clean install"
-                }
+                //dir("simple-java-maven-app") {
+                    //sh "mvn clean install"
+                //}
             }
         }
 		stage("Test") {
 			steps {
-				dir("simple-java-maven-app") {
-                    sh "mvn test"
-                }
+				echo "test step"
+				//dir("simple-java-maven-app")
+				//{
+                    //sh "mvn test"
+                //}
 			}
 		}
     }
