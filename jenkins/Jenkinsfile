@@ -26,9 +26,10 @@ pipeline {
             }
         }
 	stage("Run unit test") {
-	   //steps {
+	   steps {
 		//sh "python manage.py test tests"
-		//}
+		   echo "Hello"
+	}
 	}
     }
 }
