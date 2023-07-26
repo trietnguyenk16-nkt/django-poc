@@ -9,7 +9,7 @@ pipeline {
         stage("Clone Repo") {
             steps {	
 		    echo "START"
-		    git branch: 'main', url: 'https://github.com/trietnguyenk16-nkt/django-poc.git'
+		    //git branch: 'main', url: 'https://github.com/trietnguyenk16-nkt/django-poc.git'
 		    echo "END"
                 
             }
