@@ -8,9 +8,9 @@ pipeline {
         }
         stage("Installed libraries") {
             steps {	
-		    sh "yum -y groupinstall 'Development Tools'"
-		    sh "yum -y install openssl-devel bzip2-devel libffi-devel"
-		    sh "yum -y install wget"
+		    sh "sudo yum -y groupinstall 'Development Tools'"
+		    sh "sudo yum -y install openssl-devel bzip2-devel libffi-devel"
+		    sh "sudo yum -y install wget"
 		    sh "cd /opt"
 		    sh "wget https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tgz"
 		    sh "tar xvf Python-3.8.2.tgz"
