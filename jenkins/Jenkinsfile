@@ -19,15 +19,7 @@ pipeline {
         }
         stage("Clone Repo") {
             steps {
-		    echo "build number is set to: ${env.BUILD_NUMBER}"
-		    echo "var1 is set to: ${myFirstVariable}"
-		    echo "var2 is set to: ${mySecondVariable}"
-		    echo "var3 is set to: ${myThirdVariable}"
-		    
-		    echo "clone step test"
-		    echo "booleanParam is set to: ${params.myBoolean}"
-		    echo "string is set to: ${params.deployEnv}"  
-		    echo "choice is set to: ${params.envChoice}"
+		    git branch: 'main', url: 'https://github.com/trietnguyenk16-nkt/django-poc.git'
                 //sh git clone "https://github.com/trietnguyenk16-nkt/django-poc.git"
                 
             }
