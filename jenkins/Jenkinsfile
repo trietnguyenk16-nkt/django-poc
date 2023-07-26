@@ -13,7 +13,7 @@ pipeline {
 		    echo "END"
 		    sh "pwd"
 		    sh "ls -a"
-		    sh "python3 -v"
+		    sh "python -v"
 		    //sh "cd workspace/${env.JOB_NAME}"
 		    //echo pwd
 		    //dir("workspace/${env.JOB_NAME}") {
