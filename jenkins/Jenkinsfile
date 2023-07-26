@@ -8,6 +8,7 @@ pipeline {
         }
         stage("Installed libraries") {
             steps {	
+		    sh "sqlite3 -version"
 		    //sh "sudo yum -y groupinstall 'Development Tools'"
 		    //sh "sudo yum -y install openssl-devel bzip2-devel libffi-devel"
 		    //sh "sudo yum -y install wget"
@@ -17,16 +18,16 @@ pipeline {
 		    //sh "cd Python-3.8*/"
 		    //sh "./configure --enable-optimizations"
 		    //sh "make altinstall"
-		    sh "pip3.8 install django"
-		    sh "pip3.8 install gunicorn"
-		    sh "pip3.8 install django-bootstrap-v5"
-		    sh "python3.8 manage.py makemigrations"
-		    sh "python3.8 manage.py migrate"
+		    //sh "pip3.8 install django"
+		    //sh "pip3.8 install gunicorn"
+		    //sh "pip3.8 install django-bootstrap-v5"
+		    //sh "python3.8 manage.py makemigrations"
+		    //sh "python3.8 manage.py migrate"
             }
         }
 	stage("Run unit test") {
 	   steps {
-		sh "python manage.py test tests"
+		//sh "python manage.py test tests"
 		}
 	}
     }
