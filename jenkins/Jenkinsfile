@@ -11,8 +11,9 @@ pipeline {
 		    echo "START"
 		    git branch: 'main', url: 'https://github.com/trietnguyenk16-nkt/django-poc.git'
 		    echo "END"
-		    pwd
+		    sh "pwd"
 		    sh "ls -a"
+		    sh "python3 -v"
 		    //sh "cd workspace/${env.JOB_NAME}"
 		    //echo pwd
 		    //dir("workspace/${env.JOB_NAME}") {
