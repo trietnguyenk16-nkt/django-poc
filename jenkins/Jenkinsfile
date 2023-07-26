@@ -8,13 +8,10 @@ pipeline {
         }
         stage("Installed libraries") {
             steps {	
-		    //sh "sudo yum install -y python3.8 python3.8-venv sqlite3"
-		    sh "pwd"
-		    sh "cd django-poc" 
-		    //sh "python3 -m venv env"
-		    //sh "source env/bin/activate"
-		   // sh "python -m pip install -U pip 'django==3.2.*'"
-		    sh "pwd"
+		    sh "sudo yum install -y python3.8 python3.8-venv sqlite3"
+		    sh "python3 -m venv env"
+		    sh "source env/bin/activate"
+		    sh "python -m pip install -U pip 'django'"
             }
         }
     }
