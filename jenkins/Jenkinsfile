@@ -13,7 +13,7 @@ pipeline {
 		    echo "END"
 		    dir("workspace/${env.JOB_NAME}") {
 			    echo pwd
-			    sh "python -v"
+			    //sh "python -v"
 		    }
             }
         }
