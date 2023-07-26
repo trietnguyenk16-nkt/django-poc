@@ -19,6 +19,7 @@ pipeline {
 		    //sh "make altinstall"
 		    sh "pip3.8 install django"
 		    sh "pip3.8 install gunicorn"
+		    sh "pip3.8 install django-bootstrap-v5"
 		    sh "python3.8 manage.py makemigrations"
 		    sh "python3.8 manage.py migrate"
             }
