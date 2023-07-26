@@ -1,16 +1,5 @@
 pipeline {
     agent any
-	parameters {
-		booleanParam(defaultValue: false, description: "Enable Service?", name: "myBoolean")
-		string(defaultValue: "Testing", description: "Which Environment?", name: "deployEnv")
-		choice(choices: ["PRODD", "DEV", "QA"], description: "Environment choice", name: "envChoice")
-
-	}
-	environment {
-		def myFirstVariable = "Hello World"
-		def mySecondVariable = 10
-		def myThirdVariable = true
-	}
     stages {
         stage("Clean up")  {
           steps {
@@ -18,29 +7,12 @@ pipeline {
           }
         }
         stage("Clone Repo") {
-            steps {
+            steps {	
+		    echo "START"
 		    git branch: 'main', url: 'https://github.com/trietnguyenk16-nkt/django-poc.git'
-                //sh git clone "https://github.com/trietnguyenk16-nkt/django-poc.git"
+		    echo "END"
                 
             }
         }
-        stage("Build") {
-            steps {
-		    echo "build step"
-                // dir the same cd
-                //dir("simple-java-maven-app") {
-                    //sh "mvn clean install"
-                //}
-            }
-        }
-		stage("Test") {
-			steps {
-				echo "test step"
-				//dir("simple-java-maven-app")
-				//{
-                    //sh "mvn test"
-                //}
-			}
-		}
     }
 }
