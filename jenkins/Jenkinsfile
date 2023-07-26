@@ -1,28 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage("Clean up")  {
+        stage("Source Code Management")  {
           steps {
-              deleteDir()
+              git branch: 'main', url: 'https://github.com/trietnguyenk16-nkt/django-poc.git' 
           }
         }
-        stage("Clone Repo") {
+        stage("Installed libraries") {
             steps {	
-		    echo "START"
-		    git branch: 'main', url: 'https://github.com/trietnguyenk16-nkt/django-poc.git'
-		    echo "END"
-		    sh "pwd"
-		    sh "ls -a"
-		    //sh "python -v"
 		    //sh "sudo yum install -y python3.8 python3.8-venv sqlite3"
-		    sh "python3.8 --version"
-		    sh "pip3.8 install django"
-		    //sh "cd workspace/${env.JOB_NAME}"
-		    //echo pwd
-		    //dir("workspace/${env.JOB_NAME}") {
-			    //echo pwd
-			    //sh "python -v"
-		    //}
+		    sh "cd django-poc" 
+		    //sh "python3 -m venv env"
+		    //sh "source env/bin/activate"
+		   // sh "python -m pip install -U pip 'django==3.2.*'"
+		    sh "pwd"
             }
         }
     }
