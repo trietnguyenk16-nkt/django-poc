@@ -19,17 +19,22 @@ pipeline {
 		    //sh "./configure --enable-optimizations"
 		    //sh "make altinstall"
 		    sh "python3.8 -m venv jenkinsenv"
-		    sh "source jenkinsenv/bin/activate"
-		    sh  "pip3.8 list"
-		    sh "pip3.8 install django"
+		    if (fileExists('requirements.txt')) {
+    			echo "Hëllo"
+		    } else {
+		    	echo "NoHello"
+		    }
+		    //sh "source jenkinsenv/bin/activate"
+		    //sh  "pip3.8 list"
+		    //sh "pip3.8 install django"
 		    //sh "pip3.8 install gunicorn"
 		    //sh "pip3.8 install django-bootstrap-v5"
 		    //sh "python3.8"
 		    //sh "import sqlite3"
 		    //sh "sqlite3.sqlite_version"
 		    //sh "exit()"
-		    sh "python3.8 manage.py makemigrations"
-		    sh "python3.8 manage.py migrate"
+		    //sh "python3.8 manage.py makemigrations"
+		    //sh "python3.8 manage.py migrate"
             }
         }
 	stage("Run unit test") {
