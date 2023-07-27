@@ -10,6 +10,7 @@ pipeline {
             steps { 
 		    sh "which python"
 		    sh "which python3.8"
+		    sh "which python3"
 		    sh "python3.8 -m venv jenkinsenv"
 		    script {
 			    if (fileExists('requirements.txt')) {
