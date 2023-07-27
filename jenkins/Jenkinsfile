@@ -8,7 +8,7 @@ pipeline {
         }
         stage("Installed libraries") {
             steps {
-		    echo ${env.python_path}
+		    echo "${env.python_path}"
 		    echo "AAAAA"
 		    sh "python3.8 -m venv jenkinsenv"
 		    script {
