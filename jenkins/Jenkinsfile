@@ -8,53 +8,31 @@ pipeline {
         }
         stage("Installed libraries") {
             steps {	
-		    sh "sqlite3 -version"
-		    //sh "sudo yum -y groupinstall 'Development Tools'"
-		    //sh "sudo yum -y install openssl-devel bzip2-devel libffi-devel"
-		    //sh "sudo yum -y install wget"
-		    //sh "cd /opt"
-		    //sh "wget https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tgz"
-		    //sh "tar xvf Python-3.8.2.tgz"
-		    //sh "cd Python-3.8*/"
-		    //sh "./configure --enable-optimizations"
-		    //sh "make altinstall"
 		    sh "python3.8 -m venv jenkinsenv"
 		    script {
-		    if (fileExists('requirements.txt')) {
-    			sh """
-    				source jenkinsenv/bin/activate
-    				pip3.8 install -r requirements.txt
-    				source jenkinsenv/bin/activate
-    				python3.8 manage.py makemigrations
-       				python3.8 manage.py migrate
-	   			
-    			"""
-		    } else {
-			    echo "requirements.txt is not exist"
+			    if (fileExists('requirements.txt')) {
+	    			sh """
+	    				source jenkinsenv/bin/activate
+	    				pip3.8 install -r requirements.txt
+	    				source jenkinsenv/bin/activate
+	    				python3.8 manage.py makemigrations
+	       				python3.8 manage.py migrate
+		   			
+	    			"""
+			    } else {
+				    echo "requirements.txt is not exist"
+			    }
 		    }
-		    //sh "source jenkinsenv/bin/activate"
-		    //sh  "pip3.8 list"
-		    //sh "pip3.8 install django"
-		    //sh "pip3.8 install gunicorn"
-		    //sh "pip3.8 install django-bootstrap-v5"
-		    //sh "python3.8"
-		    //sh "import sqlite3"
-		    //sh "sqlite3.sqlite_version"
-		    //sh "exit()"
-		    
-		    //sh "python3.8 manage.py makemigrations"
-		    //sh "python3.8 manage.py migrate"
             }
         }
 	stage("Run unit test") {
 	   steps {
 		sh """
-    				source jenkinsenv/bin/activate
-    				pip3.8 install -r requirements.txt
+    			source jenkinsenv/bin/activate
+    			python manage.py test tests
     		"""
-		//sh "python manage.py test tests"
-		   echo "Hello"
 	}
 	}
     }
 }
+
