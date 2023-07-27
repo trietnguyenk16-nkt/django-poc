@@ -24,10 +24,13 @@ pipeline {
     			sh """
     				source jenkinsenv/bin/activate
     				pip3.8 install -r requirements.txt
+    				source jenkinsenv/bin/activate
+    				python3.8 manage.py makemigrations
+       				python3.8 manage.py migrate
+	   			
     			"""
 		    } else {
-		    	echo "NoHello"
-		    }
+			    echo "requirements.txt is not exist"
 		    }
 		    //sh "source jenkinsenv/bin/activate"
 		    //sh  "pip3.8 list"
@@ -38,12 +41,17 @@ pipeline {
 		    //sh "import sqlite3"
 		    //sh "sqlite3.sqlite_version"
 		    //sh "exit()"
+		    
 		    //sh "python3.8 manage.py makemigrations"
 		    //sh "python3.8 manage.py migrate"
             }
         }
 	stage("Run unit test") {
 	   steps {
+		sh """
+    				source jenkinsenv/bin/activate
+    				pip3.8 install -r requirements.txt
+    		"""
 		//sh "python manage.py test tests"
 		   echo "Hello"
 	}
