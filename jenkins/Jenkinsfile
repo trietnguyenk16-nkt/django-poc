@@ -31,7 +31,7 @@ pipeline {
 	   steps {
 		sh """
     			source jenkinsenv/bin/activate
-    			python manage.py test tests
+    			python3.8 manage.py test tests
     		"""
 	}
 	}
