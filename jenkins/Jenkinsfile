@@ -21,7 +21,10 @@ pipeline {
 		    sh "python3.8 -m venv jenkinsenv"
 		    script {
 		    if (fileExists('requirements.txt')) {
-    			echo "Hëllo"
+    			sh """
+    				source jenkinsenv/bin/activate
+    				pip3.8 install -r requirements.txt
+    			"""
 		    } else {
 		    	echo "NoHello"
 		    }
