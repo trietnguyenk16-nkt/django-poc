@@ -22,7 +22,7 @@ pipeline {
 		    sh "pip3.8 install gunicorn"
 		    sh "pip3.8 install django-bootstrap-v5"
 		    sh "python3.8"
-		    sh "import sqlite3"
+		    //sh "import sqlite3"
 		    sh "sqlite3.sqlite_version"
 		    sh "exit()"
 		    sh "python3.8 manage.py makemigrations"
