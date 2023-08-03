@@ -33,8 +33,27 @@ pipeline {
     			source jenkinsenv/bin/activate
     			python3.8 manage.py test tests
     		"""
+	   }
 	}
+	stage("Build Django App") {
+	   steps {
+		sh """
+  			source jenkinsenv/bin/activate
+     			cp -R portal /var/lib/jenkins/workspace/django-poc
+			cd /var/lib/jenkins/workspace/django-poc
+   			python3.8 setup.py sdist
+      			cd dist
+	 		cp django-poc-0.1.tar.gz /home/django-test
+    		"""
+	   }
 	}
     }
 }
-
+// Note:
+// Auto trigger when new commit not implemented
+// Add steps to check pass fail (fail send noti, pass continue)
+// in stage building django app, Consider to move django-poc out of workspace/GithubPipeline because we can deleteDir after finish or consider to creatte new django-poc with neccessary files each time running the pipeline
+// in stage building django app, should investigate how to dynmaic variable of the version (django-poc-xxxx.tar.gz)
+// currently home/django-test is only test folder for unpackaging django app, after testing will delete and use /home/my-django-app/django-poc
+// find the way not to use venv
+// can create shell file to contains all shell command, this jenkinsfile will import that shell file.
