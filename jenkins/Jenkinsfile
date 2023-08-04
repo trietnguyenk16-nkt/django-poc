@@ -8,6 +8,7 @@ pipeline {
         }
         stage("Installed libraries") {
             steps { 
+		    sh "whoami"
 		    sh "sqlite3 --version"
 		    sh "python3.8 -m venv jenkinsenv"
 		    script {
