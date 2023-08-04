@@ -32,6 +32,8 @@ pipeline {
 		sh """
     			source jenkinsenv/bin/activate
     			python3.8 manage.py test tests
+       			python3.8 manage.py makemigrations
+	       		python3.8 manage.py migrate
     		"""
 	   }
 	}
