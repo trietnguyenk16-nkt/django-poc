@@ -42,13 +42,25 @@ pipeline {
      			cp -R portal /var/lib/jenkins/workspace/django-poc
 			cd /var/lib/jenkins/workspace/django-poc
    			python3.8 setup.py sdist
-      			cd dist
-	 		cp -f django-poc-0.1.tar.gz /home/django-test
-       			python3.8 -m pip install --user /home/django-test/django-poc-0.1.tar.gz
-	  		cd /root/.local/lib/python3.8/site-packages
-     			cp -r -f portal /home/my_django_app/django-poc
     		"""
 	   }
+	}
+	stage("Deploy to Dev Environment") {
+		steps {
+			sh """
+   				cd dist
+	 			cp -f django-poc-0.1.tar.gz /home/django-test
+       				python3.8 -m pip install --user /home/django-test/django-poc-0.1.tar.gz
+	  			cd /root/.local/lib/python3.8/site-packages
+     				cp -r -f portal /home/my_django_app/django-poc
+	 			deactivate
+   		 	"""
+			sh "cd /home/my_django_app/django-poc"
+			sh """
+   				source venv/bin/activate
+       				IN-PROGRESS
+   			"""
+		}
 	}
     }
 }
