@@ -75,4 +75,4 @@ pipeline {
 // find the way not to use venv
 // can create shell file to contains all shell command, this jenkinsfile will import that shell file.
 // check if can use y (overwrite copy) in build django app, if not we need to create new version of packaging each team we package
-//
+// in stage Deploy to Dev Environment, check if we need to pip install -r requirements.txt or not
