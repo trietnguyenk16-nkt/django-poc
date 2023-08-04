@@ -32,8 +32,6 @@ pipeline {
 		sh """
     			source jenkinsenv/bin/activate
     			python3.8 manage.py test tests
-       			python3.8 manage.py makemigrations
-	       		python3.8 manage.py migrate
     		"""
 	   }
 	}
@@ -60,7 +58,8 @@ pipeline {
 			sh "cd /home/my_django_app/django-poc"
 			sh """
    				source venv/bin/activate
-       				IN-PROGRESS
+       				python3.8 manage.py makemigrations
+	       			python3.8 manage.py migrate
    			"""
 		}
 	}
