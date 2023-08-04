@@ -43,9 +43,10 @@ pipeline {
 			cd /var/lib/jenkins/workspace/django-poc
    			python3.8 setup.py sdist
       			cd dist
-	 		cp django-poc-0.1.tar.gz /home/django-test
-    			y 
+	 		cp -f django-poc-0.1.tar.gz /home/django-test
        			python3.8 -m pip install --user /home/django-test/django-poc-0.1.tar.gz
+	  		cd /root/.local/lib/python3.8/site-packages
+     			cp -r -f portal /home/my_django_app/django-poc
     		"""
 	   }
 	}
@@ -60,3 +61,4 @@ pipeline {
 // find the way not to use venv
 // can create shell file to contains all shell command, this jenkinsfile will import that shell file.
 // check if can use y (overwrite copy) in build django app, if not we need to create new version of packaging each team we package
+//
