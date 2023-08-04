@@ -40,7 +40,7 @@ pipeline {
 	   steps {
 		sh """
   			source jenkinsenv/bin/activate
-     			\\cp -R portal /var/lib/jenkins/workspace/django-poc
+     			sudo \\cp -R portal /var/lib/jenkins/workspace/django-poc
 			cd /var/lib/jenkins/workspace/django-poc
    			python3.8 setup.py sdist
     		"""
@@ -50,10 +50,10 @@ pipeline {
 		steps {
 			sh """
    				cd dist
-	 			\\cp django-poc-0.1.tar.gz /home/django-test
+	 			sudo \\cp django-poc-0.1.tar.gz /home/django-test
        				python3.8 -m pip install --user /home/django-test/django-poc-0.1.tar.gz
 	  			cd /root/.local/lib/python3.8/site-packages
-     				\\cp -R portal /home/my_django_app/django-poc
+     				sudo \\cp -R portal /home/my_django_app/django-poc
 	 			deactivate
    		 	"""
 			sh "cd /home/my_django_app/django-poc"
