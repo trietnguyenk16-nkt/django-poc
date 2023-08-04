@@ -40,9 +40,6 @@ pipeline {
 	   steps {
 		sh """
   			source jenkinsenv/bin/activate
-     			chmod +x -R ${env.WORKSPACE}
-			chmod +x -R /home
-   			chmod +x -R /root/.local/lib/python3.8/site-packages
      			\\cp -R portal /var/lib/jenkins/workspace/django-poc
 			cd /var/lib/jenkins/workspace/django-poc
    			python3.8 setup.py sdist
