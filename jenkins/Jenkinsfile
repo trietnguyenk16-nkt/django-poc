@@ -67,6 +67,16 @@ pipeline {
    			"""
 		}
 	}
+	stage("Integration test") {
+		steps {
+			echo "Integration test"
+		}
+	}
+	stage("Publish Artifact") {
+		steps {
+			echo "Publish Artifact"
+		}
+	}
     }
 }
 // Note:
