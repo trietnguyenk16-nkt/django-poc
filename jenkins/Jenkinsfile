@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("Source Code Management")  {
           steps {
-              git branch: 'main', credentialsId: '00e1c50c-dd25-4cdb-9a29-deb6e930de3a', url: 'https://github.com/trietnguyenk16-nkt/django-poc.git'
+              git branch: 'main', credentialsId: 'be3be417-57b4-4b8b-81fd-5cb082607f61', url: 'https://github.com/trietnguyenk16-nkt/django-poc.git'
 	      //checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'be3be417-57b4-4b8b-81fd-5cb082607f61', url: 'https://github.com/trietnguyenk16-nkt/django-poc.git']])
           }
         }
