@@ -52,19 +52,18 @@ pipeline {
    				cd /var/lib/jenkins/workspace/django-poc
    				cd dist
 	 			sudo \\cp django-poc-0.1.tar.gz /home/django-test
-       				python3.8 -m pip install --user /home/django-test/django-poc-0.1.tar.gz
+       			python3.8 -m pip install --user /home/django-test/django-poc-0.1.tar.gz
 	  			cd /var/lib/jenkins/.local/lib/python3.8/site-packages
-     				sudo \\cp -R portal /home/my_django_app/django-poc
-	 			deactivate
+     			sudo \\cp -R portal /home/my_django_app/django-poc
    		 	"""
-			sh "cd /home/my_django_app/django-poc"
 			sh """
+			    cd /home/my_django_app/django-poc
    				source venv/bin/activate
-       				python3.8 manage.py makemigrations
-	       			python3.8 manage.py migrate
+       			python3.8 manage.py makemigrations
+	       		python3.8 manage.py migrate
 	   			sudo systemctl stop nginx
 	   			sudo systemctl restart gunicorn.socket
-       				sudo systemctl start nginx
+       			sudo systemctl start nginx
    			"""
 		}
 	}
